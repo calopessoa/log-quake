@@ -1,4 +1,5 @@
-from src.helpers.regex import *
+# from src.helpers.regex import *
+kill_pattern = r"(?:^|\W)Kill(?:$|\W)"
 
 import re
 
@@ -13,4 +14,4 @@ def total_kills(i):
 
     return kills
 
-print(total_kills({'game': 2, 'InitGame': 10, 'ShutdownGame': 97}))
+# print(total_kills({'game': 2, 'InitGame': 10, 'ShutdownGame': 97}))
