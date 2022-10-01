@@ -10,4 +10,7 @@ death_cause = r"((?<=by\s).*)"
 players_pattern = r"((?<=n\\).*?(?=\\t))"
 
 # who got the frag (player or world)
-killer = r"([^ ]+)(?=\skilled)"
+killer = r"(\w[^:]+)(?=\skilled)"
+
+# when a player is killed by someone or the world
+player_killed = r"((?<=killed\s).*(?=\sby))"
