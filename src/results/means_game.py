@@ -7,9 +7,11 @@ def means_of_death_game():
   all_games = helperGamer()
   for game in all_games:
     all_kills = helperMeans(game)
+    if all_kills == {}:
+      all_kills = 'no deaths'
     results.append({
-      "game": game,
-      "kill_by_means": all_kills,
+      "game": game.get('game'),
+      "kills_by_means": all_kills,
     })
   return results
 
