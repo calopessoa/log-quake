@@ -1,6 +1,5 @@
 import re
-# from src.helpers.regex import *
-players_pattern = r"((?<=n\\).*?(?=\\t))"
+from src.helpers.regex import *
 
 def match_players(i):
   with open ('src/log/index.log', 'rt') as games_list:
@@ -12,4 +11,3 @@ def match_players(i):
           players.append(find_player[0])
 
     return list(set(players))
-# print(match_players({'game': 2, 'InitGame': 10, 'ShutdownGame': 97}))

@@ -1,18 +1,24 @@
 import re
 from collections import Counter
-# from src.helpers.regex import *
-killer = r"([^ ]+)(?=\skilled)"
+from src.helpers.regex import *
+
+WORLD = 'world>'
 
 def player_kills(i):
   with open ('src/log/index.log', 'rt') as games_list:
     players = []
+    assassins = []
     for index, line in enumerate(games_list):
       if index >= i.get('InitGame') and index <= i.get('ShutdownGame'):
-        find_player = re.findall(killer, line)
+        find_player = re.findall(players_pattern, line)
         if find_player:
           players.append(find_player[0])
-        kill_count = Counter(players).most_common()
-        new_kill_list = dict([tup for tup in kill_count if tup[0] != '<world>'])
+          new_players = dict.fromkeys(players, 0)
 
-    return new_kill_list
-# print(player_kills({'game': 2, 'InitGame': 10, 'ShutdownGame': 97}))
+        find_player = re.findall(killer, line)
+        if find_player and find_player[0] != WORLD:
+          assassins.append(find_player[0])
+        kill_count = dict(Counter(assassins))
+    new_players.update(kill_count)
+
+    return new_players
