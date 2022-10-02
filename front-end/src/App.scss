@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+
+body {
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
+@mixin fastDisplay($x, $y, $z) {
+  display: flex;
+  align-items: center;
+  justify-content: $x;
+  flex-flow: $y $z;
+}
+
+.main-container {
+  @include fastDisplay(none, column, nowrap);
+  min-height: 150vh;
+  // width: 97.6vw;
+
+  header {
+    @include fastDisplay(space-evenly, column, nowrap);
+    height: 220px;
+    width: 100%;
+    background-image: url('./assets/quake-header.jpg');
+    position: relative;
+    // font-size: 48px;
+    padding: 10px;
+  }
+
+  header::before {
+    background-color: rgba(0,0,0,0.15);
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+
+  }
+
+  h1 {
+    position: relative;
+    font-size: 3rem;
+  }
+}
