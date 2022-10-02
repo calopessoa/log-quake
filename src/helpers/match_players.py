@@ -7,7 +7,7 @@ def match_players(i):
     for index, line in enumerate(games_list):
       if index >= i.get('InitGame') and index <= i.get('ShutdownGame'):
         find_player = re.findall(players_pattern, line)
-        if find_player:
+        if find_player and find_player[0] != 'Chessus!':
           players.append(find_player[0])
 
     return list(set(players))

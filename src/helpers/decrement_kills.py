@@ -20,7 +20,7 @@ def decrement_kills(i):
       if busted in match:
         match[busted] += 1
       else:
-        match[busted] = 1
+        match[busted] = 1 
     final_decrement = dict(Counter(match))
     for key, value in final_decrement.items():
       final_decrement[key] = -abs(value)
