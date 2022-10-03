@@ -1,18 +1,18 @@
 import { useContext } from "react";
 import Context from "../context/Context";
 
-function MatchPlayersSelect() {
-  const { matches, setSelected } = useContext(Context);
+function MatchCausesSelect() {
+  const { deathCauses, setSelectedCauses } = useContext(Context);
 
   function handleChange({ target: { value } }) {
-    setSelected(value);
+    setSelectedCauses(value);
   }
 
   return (
-  <label>Kills per player
+  <label>Causes of Death
 
     <select name="select" onChange={ (t) => handleChange(t) }>
-    { matches?.map((obj, index) => (
+    { deathCauses?.map((obj, index) => (
       <option key={index} value={obj.game}>{obj.game}</option>
     )) }
     </select>
@@ -21,4 +21,4 @@ function MatchPlayersSelect() {
   )
 }
 
-export default MatchPlayersSelect;
+export default MatchCausesSelect
