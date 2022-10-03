@@ -19,7 +19,7 @@ body {
 
 .main-container {
   @include fastDisplay(none, column, nowrap);
-  min-height: 150vh;
+  min-height: 70vh;
   // width: 97.6vw;
 
   header {
@@ -33,7 +33,7 @@ body {
   }
 
   header::before {
-    background-color: rgba(0,0,0,0.15);
+    background-color: rgba(0,0,0,0.60);
     content: '';
     position: absolute;
     top: 0px;
@@ -43,8 +43,47 @@ body {
 
   }
 
-  h1 {
+  h1, h2 {
     position: relative;
     font-size: 3rem;
+    color: white;
   }
+
+  h3 {
+    margin: 20px 0;
+  }
+
+  .card {
+    border-radius: 8px;
+    height: 250px;
+    margin: 50px 10px;
+    width: 40vw;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .title-card {
+    margin: 10px 0;
+  }
+
+  .card-key {
+    color: #9E2E21;
+    font-weight: 800;
+  }
+
+  .card-info {
+    margin: 10px 0;
+  }
+
+  .box-container {
+    @include fastDisplay(space-evenly, row, nowrap);
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .select-left, .select-right {
+    @include fastDisplay(space-evenly, row, nowrap);
+  }
+
 }
