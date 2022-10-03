@@ -9,7 +9,7 @@ function MatchPlayersSelect() {
   }
 
   return (
-  <label>Kills per player
+  <label className="select-left">Kills per player
 
     <select name="select" onChange={ (t) => handleChange(t) }>
     { matches?.map((obj, index) => (

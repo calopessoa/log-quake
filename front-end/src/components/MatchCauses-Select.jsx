@@ -9,7 +9,7 @@ function MatchCausesSelect() {
   }
 
   return (
-  <label>Causes of Death
+  <label className="select-right">Causes of Death
 
     <select name="select" onChange={ (t) => handleChange(t) }>
     { deathCauses?.map((obj, index) => (
