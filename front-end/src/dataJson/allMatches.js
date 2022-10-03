@@ -1,4 +1,4 @@
-export const allMatches = [
+const allMatches = [
    {
       "game": 1,
       "total_kills": 0,
@@ -414,3 +414,5 @@ export const allMatches = [
       }
    }
 ]
+
+export default allMatches
