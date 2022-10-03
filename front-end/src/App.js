@@ -16,10 +16,10 @@ function App() {
 
   useEffect(() => {
     setMatches(allMatches);
-    setSelected(1);
     setDeathCauses(meansOfDeath);
+    setSelected(1);
     setSelectedCauses(1);
-  }, []);
+  }, [setDeathCauses, setMatches, setSelected, setSelectedCauses]);
 
   return (
     <main className='main-container'>
@@ -29,12 +29,17 @@ function App() {
       </header>
       <h3>Select which data to show (per match):</h3>
 
-        <MatchPlayersSelect />
-        <MatchCard />
+      <section className='box-container'>
+        <aside className='content-left'>
+          <MatchPlayersSelect />
+          <MatchCard />
+        </aside>
 
-        <MatchCausesSelect />
-        <MatchCausesCard />
-
+        <aside className='content-right'>
+          <MatchCausesSelect />
+          <MatchCausesCard />
+        </aside>
+      </section>
     </main>
   );
 }

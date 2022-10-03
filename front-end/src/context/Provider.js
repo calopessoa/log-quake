@@ -4,7 +4,7 @@ import Context from './Context';
 
 function Provider({ children }) {
   const [matches, setMatches] = useState([]);
-  const [deathCauses, setDeathCauses] = useState();
+  const [deathCauses, setDeathCauses] = useState([]);
   const [selected, setSelected] = useState(1);
   const [selectedCauses, setSelectedCauses] = useState(1);
 
