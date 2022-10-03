@@ -1,18 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import './App.scss';
+import MatchCard from './components/MatchCard';
 import MatchCausesSelect from './components/MatchCauses-Select';
 import MatchPlayersSelect from './components/MatchPlayers-Select';
+import MatchCausesCard from './components/MatchCausesCard';
+import Context from './context/Context';
 
 import allMatches from './dataJson/allMatches';
 import meansOfDeath from './dataJson/meansOfDeath';
 
 function App() {
-  const [matches, setMatches] = useState();
-  const [deathCauses, setDeathCauses] = useState()
+  const {
+    setMatches, setDeathCauses,
+    setSelected, setSelectedCauses } = useContext(Context)
 
   useEffect(() => {
     setMatches(allMatches);
+    setSelected(1);
     setDeathCauses(meansOfDeath);
+    setSelectedCauses(1);
   }, []);
 
   return (
@@ -23,23 +29,11 @@ function App() {
       </header>
       <h3>Select which data to show (per match):</h3>
 
-      { matches.map((games) => (
-        <MatchPlayersSelect
-          key={ games.game }
-          game={ games.game }
-          total-kills={ games.total_kills }
-          players={ games.players }
-          kills={ games.kills }
-        />
-      )) }
+        <MatchPlayersSelect />
+        <MatchCard />
 
-      { deathCauses.map((causes) => (
-        <MatchCausesSelect
-          key={ causes.game }
-          game={ causes.game }
-          deathCauses={ causes.kill_by_means }
-        />
-      )) }
+        <MatchCausesSelect />
+        <MatchCausesCard />
 
     </main>
   );
