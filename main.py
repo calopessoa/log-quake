@@ -25,9 +25,3 @@ def main():
   return json.dumps(results)
 
 print(main())
-
-# resolver pq em "kills" só aparece uma parte da string dos nomes dos players naquele dict OK
-
-# incluir o decremento na kill por jogador caso o <world> os mate
-
-# incluir função semelhante, por fora, de jogos e suas causas de morte, com contagem OK
