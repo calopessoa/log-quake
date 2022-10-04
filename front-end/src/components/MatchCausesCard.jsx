@@ -4,15 +4,13 @@ import Context from '../context/Context';
 function MatchCausesCard() {
   const { selectedCauses, deathCauses } = useContext(Context);
 
-  const playerKillValues = deathCauses[selectedCauses-1] && Object.entries((deathCauses[selectedCauses-1]?.kills_by_means));
+  const anyMeans = deathCauses[selectedCauses-1] && Object.entries((deathCauses[selectedCauses-1]?.kills_by_means));
 
-  const formatKills = playerKillValues?.reduce((acc, element, index) => {
-    return index === playerKillValues.length-1
+  const formatCauses = anyMeans?.reduce((acc, element, index) => {
+    return index === anyMeans.length-1
     ? acc += `${element[0]}: ${element[1]} `
     : acc += `${element[0]}: ${element[1]}, `
   }, '')
-
-  // const topPlayers = deathCauses[selectedCauses-1] && Object.keys((deathCauses[selectedCauses-1]?.kills)).slice(0, 3).join(', ')
 
   return (
     <>
@@ -22,7 +20,7 @@ function MatchCausesCard() {
 
               <span className="bigshots">
                 <article
-                  className="card-info"><span className='card-key'>Kills:</span> {formatKills}
+                  className="card-info"><span className='card-key'>Kills:</span> {formatCauses}
                 </article>
               </span>
 
