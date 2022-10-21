@@ -1,7 +1,7 @@
 # Quake 3 Arena - Match Log Viewer
 
 Check the viewer application here!
-<a href="http://quake3-log-viewer.vercel.app/">Quake Log Documentation</a>
+<a href="http://quake3-log-viewer.vercel.app/">Quake Log Application</a>
 <b>
 
 A Single-Page-App (SPA) to render the results of each match from a session of Quake 3 Arena.
