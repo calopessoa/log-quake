@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-describe('empty spec', () => {
-  it('passes', () => {
+describe('SPA rendering and its elements', () => {
+  it('should correctly visit and render the main page', () => {
     cy.visit('https://quake3-log-viewer.vercel.app/')
   });
 
