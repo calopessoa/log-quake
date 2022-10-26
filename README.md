@@ -87,6 +87,7 @@ That is the Causes of Death card (the right-corner card in the application):
 - React (Context API)
 - Free Formatter - to format JSON files
 - SASS - CSS
+- Cypress
 
 #### Log Parsing
 
@@ -106,6 +107,7 @@ In this project I could improve my knowledge in both front-end and Python, by:
 - Using and learning about new frameworks and its applicabilities, namely Pytest framework.
 - Creating a fake database to make unitary tests for the pattern-search functions.
 - Rendering a dynamic card based on the option selected in a page.
+- Using the basics of cypress to test the main page (front-end).
 
 ## Usage
 
@@ -127,6 +129,23 @@ python3 -m main.py
 ```
 
 ## Testing
+
+Testing the main page, within the front-end:
+
+(Install the dependencies):
+```bash
+npm install
+```
+
+```bash
+npx cypress open
+```
+or, withouth the GUI:
+
+```bash
+npm run test:chrome
+```
+
 
 Firstly, install Pytest dependency:
 ```bash
