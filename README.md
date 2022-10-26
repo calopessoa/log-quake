@@ -132,11 +132,16 @@ python3 -m main.py
 
 Testing the main page, within the front-end:
 
-(Install the dependencies):
+(Install the dependencies, after moving to the project's folder):
+```bash
+cd front-end
+```  
+  
 ```bash
 npm install
 ```
-
+Now, to run cypress:
+  
 ```bash
 npx cypress open
 ```
@@ -145,7 +150,7 @@ or, withouth the GUI:
 ```bash
 npm run test:chrome
 ```
-
+Testing the parsing functions: 
 
 Firstly, install Pytest dependency:
 ```bash
