@@ -1,7 +1,7 @@
 import re
 from collections import Counter
-# from src.helpers.regex import death_cause
-death_cause = r"((?<=by\s).*)"
+from src.helpers.regex import death_cause
+# death_cause = r"((?<=by\s).*)"
 
 def helperMeans(i):
   with open ('src/log/index.log', 'rt') as games_list:

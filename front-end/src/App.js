@@ -6,8 +6,8 @@ import MatchPlayersSelect from './components/MatchPlayers-Select';
 import MatchCausesCard from './components/MatchCausesCard';
 import Context from './context/Context';
 
-import allMatches from './dataJson/allMatches';
-import meansOfDeath from './dataJson/meansOfDeath';
+import matches from './dataJson/matches';
+import meansOfDeath from './dataJson/meansRedudancy';
 
 function App() {
   const {
@@ -15,7 +15,7 @@ function App() {
     setSelected, setSelectedCauses } = useContext(Context)
 
   useEffect(() => {
-    setMatches(allMatches);
+    setMatches(matches);
     setDeathCauses(meansOfDeath);
     setSelected(1);
     setSelectedCauses(1);

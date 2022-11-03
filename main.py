@@ -1,5 +1,6 @@
 import json
 from collections import Counter
+from src.deathCauses.means_game import means_of_death_game
 from src.helpers.game_number import *
 from src.helpers.total_kills import *
 from src.helpers.match_players import *
@@ -22,6 +23,16 @@ def main():
       "players": all_players,
       "kills": dict(score),
     })
-  return json.dumps(results)
 
+    death_causes = means_of_death_game()
+
+  with open('front-end/src/dataJson/matches.json', 'w+') as file:
+    json.dump(results, file)
+
+  with open('front-end/src/dataJson/meansOfDeath.json', 'w+') as file:
+    json.dump(death_causes, file)
+
+print(f'Relatório gerado! Arquivos json criados em front-end/src/dataJson')
 print(main())
+
+

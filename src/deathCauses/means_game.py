@@ -1,5 +1,6 @@
-from helperGame import helperGamer
-from helperMeans import helperMeans
+import json
+from src.deathCauses.helperGame import helperGamer
+from src.deathCauses.helperMeans import helperMeans
 
 # returns all matches and within each casuses of death per game;
 def means_of_death_game():
@@ -16,5 +17,3 @@ def means_of_death_game():
       "kills_by_means": all_kills,
     })
   return results
-
-print(means_of_death_game())
