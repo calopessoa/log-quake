@@ -125,7 +125,7 @@ source .venv/bin/activate
 
 Run the following to show all game matches from the main function:
 ```bash
-python3 -m main.py
+python3 main.py
 ```
 
 ## Testing
