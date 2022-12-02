@@ -120,6 +120,11 @@ cd log-quake
 ```
 Install Venv environment for Python:
 ```bash
+python3 -m venv .venv
+```
+
+Go into the virtual environment
+```bash
 source .venv/bin/activate
 ```
 
