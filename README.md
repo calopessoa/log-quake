@@ -19,7 +19,7 @@ Please proceed to the Documentation for a guide:
   - [Lessons learned](#lessons-learned)
 - [Usage](#usage)
 - [Testing](#testing)
-- [TroubleShooting](#troubleshooting)
+- [Jenkins Pipeline](#jenkins-pipeline)
 - [Author](#author)
 
 ## General view
@@ -161,6 +161,42 @@ The, run the following command to get all tests, with the verbose tag:
 ```bash
 python3 -m pytest -v
 ```
+
+## Jenkins Pipeline
+
+- Install Docker on your local machine.
+- Run this command:
+```bash
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+```
+- Write down the password that's created for you during the set up, like:
+"9061757e890a4e81802c4b54399adaba"
+- Now visit *localhost:8080* and you'll be prompted the above password
+- If you run into problems connecting with Jenkins, try removing the container and redoing the above steps all over again; resetting the container should also work.
+- Go to "New Task"
+- Add to the configuration tab the setup included in Jenkinsfile
+- While the docker container is running, run cmd: docker ps to see what containers are running - copy the container ID for Jenkins, like: *440b198de7be*
+- Run this command to go to Docker container as root (user 0):
+```bash
+docker exec -it -u 0 YourContainerIdHere /bin/bash
+```
+- Run the following commands to get python and pip within Docker container:
+```bash
+apt-get update
+```
+```bash
+apt-get install python3
+```
+```bash
+apt-get install python3-pip
+```
+
+- Then, run this to install the pytest package:
+```bash
+pip install pytest
+```
+
+- Back to the Main Board in Jerkins, press "Build now" to run the pipelines
 
 ## Author
 
