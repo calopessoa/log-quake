@@ -120,6 +120,11 @@ cd log-quake
 ```
 Install Venv environment for Python:
 ```bash
+python3 -m venv .venv
+```
+
+Go into the virtual environment
+```bash
 source .venv/bin/activate
 ```
 
@@ -129,6 +134,18 @@ python3 main.py
 ```
 
 ## Testing
+  
+Testing the parsing functions: 
+
+Firstly, install Pytest dependency:
+```bash
+python3 -m pip install pytest
+```
+
+Then, run the following command to get all tests, with the verbose tag:
+```bash
+python3 -m pytest -v
+```
 
 Testing the main page, within the front-end:
 
@@ -150,17 +167,7 @@ or, withouth the GUI:
 ```bash
 npm run test:chrome
 ```
-Testing the parsing functions: 
 
-Firstly, install Pytest dependency:
-```bash
-python3 -m pip install pytest
-```
-
-The, run the following command to get all tests, with the verbose tag:
-```bash
-python3 -m pytest -v
-```
 
 ## Jenkins Pipeline
 
